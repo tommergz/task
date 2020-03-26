@@ -1,5 +1,6 @@
 import React from 'react';
 import './app.css';
+import Board from '../board';
 
 class App extends React.Component {
   constructor(props) {
@@ -18,6 +19,9 @@ class App extends React.Component {
             <input type="text" className="search" placeholder={('Choose')} ref={(input) => { this.searchInput = input }} />
             <button type="button" className="input-button">{('= Go =')}</button>       
           </div>
+          <Board
+            value = {this.state.canvas} 
+          />
         </div>
       </div>
     );

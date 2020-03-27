@@ -18,8 +18,11 @@ class App extends React.Component {
     let newCanvas = this.state.canvas;    
     let command = inputArr[0];
 
-    if ((command === "C" || command === "L" || command === "R" || command === "B")) {
-
+    if ((command === "L" || command === "R" || command === "B") && !this.state.field) {
+      alert('Where is some canvas?');
+      return;
+    }
+   
       let firstEl;
       let secondEl;
       let thirdEl;
@@ -240,10 +243,6 @@ class App extends React.Component {
 
       //\\\\\\\\\\\\\\\\ COMMANDS \\\\\\\\\\\\\\\\\\
 
-    }
-    else if (this.state.field === false) {
-      alert('Where is some canvas?')
-    }
   }
 
   render() {

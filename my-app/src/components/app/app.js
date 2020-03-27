@@ -19,7 +19,7 @@ class App extends React.Component {
     let command = inputArr[0];
 
     if ((command === "L" || command === "R" || command === "B") && !this.state.field) {
-      alert('Where is some canvas?');
+      alert('Create canvas first.');
       return;
     }
    
@@ -72,7 +72,7 @@ class App extends React.Component {
           f(1, 3, 2, someCanvas, someArr)
         }
         else {
-          alert("Is this line?")
+          alert("This is not a line.")
         }
       }
 
@@ -179,7 +179,7 @@ class App extends React.Component {
         });
         }
         else {
-          alert('Type this for good canvas - C number number')
+          alert('Type ‘C number number’ for new canvas')
         }
       }
       else if (command === "L" && this.state.field === true) {

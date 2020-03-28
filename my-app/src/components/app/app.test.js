@@ -11,6 +11,10 @@ describe('(Component) App', () => {
 
   const wrapper = mount(<App />);
   
+  it('should renders', () => {
+    expect(wrapper.exists()).toBe(true);
+  });
+
   it('it should render Board', () => {
     expect(wrapper.find(Board).exists()).toBe(true);
   });

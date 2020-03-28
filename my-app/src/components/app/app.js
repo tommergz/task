@@ -202,7 +202,7 @@ class App extends React.Component {
       }
       else if (command === "R" && this.state.field === true && inputArr.length === 5 && booleanF(firstEl, secondEl, thirdEl, fourthEl)) {
         if (firstEl === thirdEl || secondEl === fourthEl) {
-          alert("Is this rectangular?")
+          alert("This is not a rectangle.")
         }
         else if (1 > firstEl || firstEl > newCanvas[0].length - 2 || 1 > thirdEl || thirdEl > newCanvas[0].length - 2 || 1 > secondEl || secondEl > newCanvas.length - 2 || 1 > fourthEl || fourthEl > newCanvas.length - 2) {
           alert("Wrong size")

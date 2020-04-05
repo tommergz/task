@@ -14,7 +14,6 @@ class App extends React.Component {
   handleClick() {
 
     let inputArr = this.searchInput.value.split(' ');
-
     let newCanvas = this.state.canvas;    
     let command = inputArr[0];
 
@@ -96,15 +95,12 @@ class App extends React.Component {
       let firstCell = true;
 
       const bucket = (newValue, arr, x, y, el) => {
-        let border = 0;
         let elem = el;
-        if (firstCell) {
-          if (arr[y][x] === bucketEl) {
-            return;
-          }
-          else {
-            firstCell = false;
-          }
+        if (firstCell && arr[y][x] === bucketEl) {
+          return;
+        }
+        else {
+          firstCell = false;
         }
         const dot = (x, y) => {
           if (arr[y][x] === newValue && x > 0 && x <= newCanvas[0].length - 2 && y > 0 && y <= newCanvas.length - 2) {
@@ -118,28 +114,11 @@ class App extends React.Component {
             return false;
           }
         }
-        dot(x, y);
-        
-        if (border < 1) {
-          while (border < 1) {               
-            dot(x, y - 1) ? bucket(newValue, newCanvas, x, y-1, elem) : border += 1;
-          }
-        } 
-        if (border < 2) {
-          while (border < 2) {              
-            dot(x - 1, y) ? bucket(newValue, newCanvas, x-1, y, elem) : border += 1;
-          }
-        } 
-        if (border < 3) {
-          while (border < 3) {              
-            dot(x + 1, y) ? bucket(newValue, newCanvas, x+1, y, elem) : border += 1;
-          }
-        } 
-        if (border < 4) {
-          while (border < 4) {              
-            dot(x, y + 1) ? bucket(newValue, newCanvas, x, y+1, elem) : border += 1;
-          }
-        }
+        dot(x, y);          
+          if (dot(x, y - 1)) { bucket(newValue, newCanvas, x, y-1, elem) };      
+          if (dot(x - 1, y)) { bucket(newValue, newCanvas, x-1, y, elem) };    
+          if (dot(x + 1, y)) { bucket(newValue, newCanvas, x+1, y, elem) };
+          if (dot(x, y + 1)) { bucket(newValue, newCanvas, x, y+1, elem) };       
         return;
       }
 

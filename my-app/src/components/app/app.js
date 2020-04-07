@@ -187,16 +187,16 @@ class App extends React.Component {
           alert("Wrong size")
         } else {
           let firstArr = [];
-          firstArr.push(command); firstArr.push(firstEl); firstArr.push(secondEl); firstArr.push(thirdEl); firstArr.push(secondEl);
+          firstArr.push(command); firstArr.push(firstEl, secondEl, thirdEl, secondEl);
           paint(line, newCanvas, firstArr);
           let secondArr = [];
-          secondArr.push(command); secondArr.push(thirdEl); secondArr.push(secondEl); secondArr.push(thirdEl); secondArr.push(fourthEl);
+          secondArr.push(command); secondArr.push(thirdEl, secondEl, thirdEl, fourthEl);
           paint(line, newCanvas, secondArr);
           let thirdArr = [];
-          thirdArr.push(command); thirdArr.push(firstEl); thirdArr.push(fourthEl); thirdArr.push(thirdEl); thirdArr.push(fourthEl);
+          thirdArr.push(command); thirdArr.push(firstEl, fourthEl, fourthEl);
           paint(line, newCanvas, thirdArr);
           let fourthArr = [];
-          fourthArr.push(command); fourthArr.push(firstEl); fourthArr.push(secondEl); fourthArr.push(firstEl); fourthArr.push(fourthEl);
+          fourthArr.push(command); fourthArr.push(firstEl, secondEl, firstEl, fourthEl);
           paint(line, newCanvas, fourthArr);
         }
       } 

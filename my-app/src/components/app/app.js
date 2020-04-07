@@ -193,7 +193,7 @@ class App extends React.Component {
           secondArr.push(command); secondArr.push(thirdEl, secondEl, thirdEl, fourthEl);
           paint(line, newCanvas, secondArr);
           let thirdArr = [];
-          thirdArr.push(command); thirdArr.push(firstEl, fourthEl, fourthEl);
+          thirdArr.push(command); thirdArr.push(firstEl, fourthEl, thirdEl, fourthEl);
           paint(line, newCanvas, thirdArr);
           let fourthArr = [];
           fourthArr.push(command); fourthArr.push(firstEl, secondEl, firstEl, fourthEl);
